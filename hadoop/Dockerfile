@@ -16,8 +16,8 @@ MAINTAINER Hari Sekhon (https://www.linkedin.com/in/harisekhon)
 
 #ARG HADOOP_VERSION=1.2.1
 #ARG HADOOP_VERSION=2.5.2
-#ARG HADOOP_VERSION=2.6.4
-ARG HADOOP_VERSION=2.7.2
+ARG HADOOP_VERSION=2.6.4
+#ARG HADOOP_VERSION=2.7.2
 
 ARG TAR=hadoop-$HADOOP_VERSION.tar.gz
 
@@ -39,7 +39,7 @@ RUN \
     #/hadoop/bin/hadoop namenode -format && \
     # Hadoop 2.x
     /hadoop/bin/hdfs namenode -format && \
-    yum remove -y wget tar && \
+    yum remove -y wget && \
     yum autoremove -y && \
     yum install -y hostname && \
     yum clean all
